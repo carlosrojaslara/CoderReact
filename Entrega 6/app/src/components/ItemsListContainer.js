@@ -8,7 +8,6 @@ const ItemListContainer =()=>{
     const stock=10
 
     const productosIniciales = [
-        {id :1 , nombre: "Efecto de sonido 1", precio: "20USD", },
         {id :2 , nombre: "Efecto de sonido 2", precio: "25USD"},
         {id :3 , nombre: "Efecto de sonido 3", precio: "15USD"},
         {id :4 , nombre: "Efecto de sonido 4", precio: "23USD"}
