@@ -1,5 +1,5 @@
 import ballenaXS from '../assets/img/ballenaXS.png'; 
-
+import { NavLink } from 'react-router-dom'; 
 
 
 const NavBar = (props)=>{
@@ -7,13 +7,15 @@ const NavBar = (props)=>{
         <nav id="navBar">
             <ul>
                 <li id='imagen'>
-                <img src={ballenaXS} alt="logo"/>
+                    <NavLink to="/">
+                        <img src={ballenaXS} alt="logo"/>
+                    </NavLink>
                 </li>
                 <li>
-                    <a href="#">link</a>
+                    <NavLink to="/categoria/efectos">Efectos</NavLink>
                 </li>
                 <li>
-                    <a href="#">link</a>
+                    <NavLink to="/categoria/ambientes">Ambientes</NavLink>
                 </li>
                 <li>
                     {props.children}

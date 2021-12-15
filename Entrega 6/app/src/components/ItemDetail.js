@@ -3,7 +3,6 @@ import museum from '../assets/img/5-58235_sound-waves-png-cobra-museum.png';
 
 const ItemDetail = ({itemsProps})=>{ 
 
-    console.log(itemsProps)
                 return (
                 <div> <h2>{itemsProps.nombre} 
                 <p>{itemsProps.id}</p>
