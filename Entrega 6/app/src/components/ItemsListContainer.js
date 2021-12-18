@@ -4,8 +4,6 @@ import {useState , useEffect} from "react";
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer =()=>{
-    const valorInicial =0
-    const stock=10
 
     const productosIniciales = [
         {id :2 , nombre: "Efecto de sonido 2", precio: "25USD"},

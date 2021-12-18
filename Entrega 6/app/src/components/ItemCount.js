@@ -7,6 +7,8 @@ const ItemCount = (props) => {
 
     const [contador, setContador] = useState(props.valorInicial);
 
+   
+
 
     const aumentarContador = () => {
 
@@ -26,6 +28,7 @@ const ItemCount = (props) => {
 
     const onAdd = () =>{
 
+        props.onEvent(contador)
         alert("gracias por la compra")
 
     }
@@ -39,8 +42,9 @@ const ItemCount = (props) => {
 
                     <button onClick={disminuirContador}>sacar</button>
                 </div>
-
-                     <button onClick={onAdd}>Agregar al carrito</button> 
+                    <a href="/cart">
+                         <button onClick={onAdd}>Agregar al carrito</button> 
+                    </a>
             </>
 
             )

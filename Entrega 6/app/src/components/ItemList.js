@@ -6,6 +6,8 @@ import { NavLink } from 'react-router-dom';
 
 const ItemList = (props) =>{
 
+    
+
     const productosProp = props.productos.map((elemento,indice)=>{
         return ( 
                 <h2>{elemento.nombre} 
