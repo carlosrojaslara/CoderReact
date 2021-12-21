@@ -1,5 +1,5 @@
 import {useState} from "react";
-
+import { NavLink } from "react-router-dom"
 
 const ItemCount = (props) => {
 
@@ -42,9 +42,7 @@ const ItemCount = (props) => {
 
                     <button onClick={disminuirContador}>sacar</button>
                 </div>
-                    <a href="/cart">
-                         <button onClick={onAdd}>Agregar al carrito</button> 
-                    </a>
+                    < NavLink to="/cart" onClick={onAdd}>Agregar al carrito</NavLink>
             </>
 
             )
