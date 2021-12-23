@@ -1,8 +1,15 @@
+import museum from '../assets/img/5-58235_sound-waves-png-cobra-museum.png'; 
+import { NavLink } from 'react-router-dom'; 
 
 const Item = (props) => {
 
     return (
-        <div>{props.productosProp}</div>
+        <h2>{props.elemento.nombre} 
+                <p>{props.elemento.id}</p>
+                <p>{props.elemento.precio}</p>
+                <img src={museum} alt="imagen"></img>
+                <NavLink to="/item/1">VER DETALLE</NavLink>
+         </h2>
     )
 } 
 

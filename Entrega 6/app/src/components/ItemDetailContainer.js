@@ -6,9 +6,12 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer =()=>{
     const {id} = useParams(); 
-    const detalleProducto= {id :1 , nombre: "Ambiente de ciudad", precio: "20USD", descripcion:"Sonido ambiente de la ciudad en altas horas de la noche." };
+    const detalleProducto= [
+        {id :1 , nombre: "Ambiente de ciudad", precio: "20USD", descripcion:"Sonido ambiente de la ciudad en altas horas de la noche." },
+        {id :2 , nombre: "Ambiente de bosque", precio: "25USD", descripcion:"Sonido ambiente de bosque desolado." }
+    ]
 
-    const [items, setItems]=useState(null);
+    const [items, setItems]=useState([]);
 
 
     useEffect(()=>{

@@ -1,20 +1,20 @@
 import {useState} from "react";
 import { NavLink } from "react-router-dom"
+import { useContext } from 'react'
+import Context  from './Context'
 
 const ItemCount = (props) => {
-
- 
+    const  { addItem, handleRemoveCart, handleDeleteItem } = useContext(Context)
 
     const [contador, setContador] = useState(props.valorInicial);
 
    
-
-
     const aumentarContador = () => {
 
         if (contador < props.stock);
 
             setContador(contador + 1);
+
     }
 
 
@@ -24,12 +24,23 @@ const ItemCount = (props) => {
 
            setContador(contador - 1)
 
+
     }
 
     const onAdd = () =>{
+        
+        addItem(props.items, contador)
 
-        props.onEvent(contador)
-        alert("gracias por la compra")
+
+    }
+
+  
+
+    const handleDelete =()=>{
+
+        handleDeleteItem(props.items)
+
+
 
     }
 
@@ -42,7 +53,11 @@ const ItemCount = (props) => {
 
                     <button onClick={disminuirContador}>sacar</button>
                 </div>
-                    < NavLink to="/cart" onClick={onAdd}>Agregar al carrito</NavLink>
+                    <NavLink to='/cart'> ir al carrito </NavLink>
+                    < button onClick={onAdd}>Agregar al carrito</button>
+                    < button onClick={handleDelete} >Remover del carrito</button>
+
+                    
             </>
 
             )
