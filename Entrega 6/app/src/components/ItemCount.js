@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import Context  from './Context'
 
 const ItemCount = (props) => {
-    const  { addItem, handleRemoveCart, handleDeleteItem } = useContext(Context)
+    const  { addItem, handleDeleteItem } = useContext(Context)
 
     const [contador, setContador] = useState(props.valorInicial);
 
@@ -34,7 +34,6 @@ const ItemCount = (props) => {
 
     }
 
-  
 
     const handleDelete =()=>{
 
@@ -47,7 +46,7 @@ const ItemCount = (props) => {
         return (
             <> 
             <div>
-                    <button onClick={aumentarContador}>agregar</button>
+                    <button onClick={aumentarContador} >agregar</button>
 
                     <p>cantidad de efectos comprados : {contador}</p>
 

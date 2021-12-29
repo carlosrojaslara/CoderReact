@@ -1,5 +1,6 @@
 import NavBar from './NavBar';
 import cart from '../assets/img/cart.png';
+import CartWidget from './CartWidget';
 
 
 
@@ -10,7 +11,9 @@ const Header = () =>{
                 <h1>Seasound SOUND design</h1>
         <NavBar>
             <img src={cart} alt="carrito"/>
+            <CartWidget />
         </NavBar>
+        
 
         </header>
         </>

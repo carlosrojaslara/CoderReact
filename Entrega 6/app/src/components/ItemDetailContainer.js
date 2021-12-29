@@ -1,5 +1,6 @@
 import {useState , useEffect} from "react";
 import ItemDetail from "./ItemDetail";
+import Cart from './Cart'
 import { useParams } from 'react-router-dom';
 
 
@@ -37,7 +38,7 @@ const ItemDetailContainer =()=>{
 
  
 
-    return (items !== null && <ItemDetail  itemsProps= {items} />)
+    return (items !== null &&  <ItemDetail  itemsProps= {items} />)
 
 }
 export default ItemDetailContainer;
