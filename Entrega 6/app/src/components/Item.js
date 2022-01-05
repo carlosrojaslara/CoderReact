@@ -5,7 +5,7 @@ const Item = (props) => {
 
     return (
         <h2>{props.elemento.nombre} 
-                <p>{props.elemento.id}</p>
+                <p>{props.elemento.categoria}</p>
                 <p>{props.elemento.precio}</p>
                 <img src={museum} alt="imagen"></img>
                 <NavLink to="/item/1">VER DETALLE</NavLink>

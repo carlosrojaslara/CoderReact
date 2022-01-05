@@ -34,7 +34,7 @@ const ItemDetailContainer =()=>{
  
 
         
-    },id)
+    },[id])
 
  
 

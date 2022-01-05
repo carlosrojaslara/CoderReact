@@ -25,7 +25,6 @@ const CartContext = ( { children } ) => {
             newArray.map((value,index) =>{
                 if (value.item.id===item.id) {
                     indice=index;
-                    return index 
                 }
             })
             newArray[indice].contador=newArray[indice].contador + quantity
