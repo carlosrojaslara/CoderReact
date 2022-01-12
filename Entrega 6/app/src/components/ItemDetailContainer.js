@@ -2,37 +2,29 @@ import {useState , useEffect} from "react";
 import ItemDetail from "./ItemDetail";
 import Cart from './Cart'
 import { useParams } from 'react-router-dom';
+import { db } from '../firebase'
+import { collection , getDoc, doc } from 'firebase/firestore'
 
 
 
 const ItemDetailContainer =()=>{
-    const {id} = useParams(); 
-    const detalleProducto= [
-        {id :1 , nombre: "Ambiente de ciudad", precio: "20USD", descripcion:"Sonido ambiente de la ciudad en altas horas de la noche." },
-        {id :2 , nombre: "Ambiente de bosque", precio: "25USD", descripcion:"Sonido ambiente de bosque desolado." }
-    ]
-
-    const [items, setItems]=useState([]);
-
-
-    useEffect(()=>{
-        const promesa = new Promise((res,rej)=>{
-            setTimeout(()=>{
-                res(detalleProducto)
     
-            },2000)
+    const [items, setItems]=useState({});
+    const { id } = useParams(); 
 
-        })
+    const getItem = async () =>{
+        
+        const productosCollection = collection (db, 'productos');
+        const referencia = doc(productosCollection,id)
+        const consulta = await getDoc(referencia);
+        setItems({...consulta.data()})
+    }
 
 
-        promesa.then((resultado)=>{
-            setItems(resultado)
+    useEffect(()=> {
 
-        })
-       promesa.catch(()=>{
-        }) 
+        getItem();
  
-
         
     },[id])
 

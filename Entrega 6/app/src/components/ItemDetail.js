@@ -5,35 +5,32 @@ import { useContext } from 'react'
 import Context  from './Context'
 
 const ItemDetail = ({itemsProps})=>{
+
+    const valorInicial = 0;
+
     const { handleRemoveCart } = useContext(Context)
-    const stock=10
-    const valorInicial =0
-    
+   
     const handleRemove=()=>{
         handleRemoveCart()
 
     }
+    // console.log(itemsProps)
 
                 return (
-                <div>
-                    {itemsProps.map((e) => (
-                        <div key={e.id}>
-                            <h2>{itemsProps.nombre} 
-                            <p>{itemsProps.id}</p>
-                            <p>{itemsProps.precio}</p>
-                            <img src={museum} alt="imagen"></img>
-                            <p>{itemsProps.descripcion}</p>
-                            </h2>
-                            <div>
-                                <ItemCount stock={stock} valorInicial={valorInicial} items={e}></ItemCount>
-                            </div>
-                        
-                        </div>
-                    ))}
+                <div>          
+                    <h2>{itemsProps.titulo} 
+                    <p>{itemsProps.id}</p>
+                    <p>{itemsProps.precio} $ </p>
+                    <img src={museum} alt="imagen"></img>
+                    <p>{itemsProps.descripcion}</p>
+                    </h2>
+                    <div>
+                        <ItemCount stock={itemsProps.stock} valorInicial={valorInicial} items={itemsProps}></ItemCount>
+                    </div>
                     < button onClick={handleRemove} >Vaciar el carrito</button>
                </div>
 
-                 )
+        )         
 }
     
 export default ItemDetail;

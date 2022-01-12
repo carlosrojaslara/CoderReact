@@ -1,15 +1,10 @@
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Context from './Context'
 
 
 const CartContext = ( { children } ) => {
 
-
-
-    // const valorInicial = {
-    //     items : [{item : {} , quantity: 0 }],
-    // }
 
     const [carrito, setCarrito] = useState([]) 
     const [totalCarrito, setTotalCarrito] = useState(0) 
@@ -28,9 +23,6 @@ const CartContext = ( { children } ) => {
                 }
             })
             newArray[indice].contador=newArray[indice].contador + quantity
-            // console.log('act',newArray[indice].contador )
-            // console.log('indice',indice)
-            // console.log('carritoF',carrito)
             alert('se han sumado la cantidad a un elemento existente')
             
        } else { 
@@ -42,8 +34,6 @@ const CartContext = ( { children } ) => {
 
             setTotalCarrito(sum)
             setCarrito (newArray)
-
-          //  console.log(carrito)
 
             alert('se agrego al carrito');
         }
@@ -90,12 +80,6 @@ const CartContext = ( { children } ) => {
         setCarrito(newArray)
         alert('Carrito vaciado')
     }
-
-    useEffect (() => {
-        console.log('carrito3',carrito);
-
-    }, [carrito])
-
 
     
 

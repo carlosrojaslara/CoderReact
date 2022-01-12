@@ -8,7 +8,7 @@ const Item = (props) => {
                 <p>{props.elemento.categoria}</p>
                 <p>{props.elemento.precio}</p>
                 <img src={museum} alt="imagen"></img>
-                <NavLink to="/item/1">VER DETALLE</NavLink>
+                <NavLink to={`/item/${props.elemento.id}`}>VER DETALLE</NavLink>
          </h2>
     )
 } 
