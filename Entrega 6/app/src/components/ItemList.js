@@ -3,18 +3,17 @@ import Item from './Item';
 
 
 
-const ItemList = (props) =>{
+const ItemList = (props) => {
 
-    
-    return ( 
-        <div>
-            {props.productos.map((elemento)=>(
-                 <div key={elemento.id}>
-                    <Item elemento={elemento}/>
+
+    return (
+        <div className='listContainer'>
+            {props.productos.map((elemento) => (
+                <div key={elemento.id}>
+                    <Item elemento={elemento} />
                 </div>
-            
             )
-    )}
+            )}
         </div>
     )
 }

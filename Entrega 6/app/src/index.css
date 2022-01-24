@@ -33,5 +33,60 @@ nav ul li{
 
 }
 
+.listContainer{
+  display: row;
+  flex-direction: row;
+  
+}
 
+.imagen{
+  height: 90px;
+}
 
+.detalle{
+  text-decoration: none;
+  align-self: center;
+  margin-left: 10px;
+  color:blue;
+}
+
+.detalleContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.links{
+  text-decoration: none;
+}
+
+.navContainer{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.imgContainer{
+  height: 15px;
+  align-self: center;
+}
+
+.countContainer{
+  margin: 30px;
+}
+
+.agregarContainer{
+  margin-top: 20px;
+  
+}
+
+.botonContainer{
+  text-decoration: none;
+}
+
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 400px;
+}

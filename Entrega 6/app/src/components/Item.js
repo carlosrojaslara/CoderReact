@@ -4,12 +4,15 @@ import { NavLink } from 'react-router-dom';
 const Item = (props) => {
 
     return (
-        <h2>{props.elemento.nombre} 
+        <div>
+                <h3>{props.elemento.nombre}</h3>
                 <p>{props.elemento.categoria}</p>
-                <p>{props.elemento.precio}</p>
-                <img src={museum} alt="imagen"></img>
-                <NavLink to={`/item/${props.elemento.id}`}>VER DETALLE</NavLink>
-         </h2>
+                <img className='imagen' src={museum} alt="imagen"></img>
+                <div className='detalleContainer'>
+                    <p>{props.elemento.precio} $</p>
+                    <NavLink className="detalle" to={`/item/${props.elemento.id}`}>VER DETALLE</NavLink>
+                </div>
+         </div>
     )
 } 
 
