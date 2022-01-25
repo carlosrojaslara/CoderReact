@@ -38,6 +38,8 @@ nav ul li{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-content: space-around;
+  align-items:center;
   
 }
 
@@ -45,7 +47,7 @@ nav ul li{
   height: 90px;
 }
 
-.detalle{
+.detalle {
   text-decoration: none;
   align-self: center;
   margin-left: 10px;
