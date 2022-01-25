@@ -34,8 +34,10 @@ nav ul li{
 }
 
 .listContainer{
-  display: row;
+  display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
   
 }
 
@@ -60,7 +62,7 @@ nav ul li{
   text-decoration: none;
 }
 
-.navContainer{
+.navContainer {
   display: flex;
   flex-direction: column;
   

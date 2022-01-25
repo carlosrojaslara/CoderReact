@@ -4,11 +4,14 @@ import { NavLink } from 'react-router-dom';
 import { db } from '../firebase'
 
 import { addDoc, collection } from 'firebase/firestore';
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import Form from "./Form"
 
 
+
 const Cart = () => {
+    const [submit, setSubmit] = useState(false)
+
     const { carrito, handleDeleteItem, handleRemoveCart } = useContext(Context)
     const [loading, setLoading] = useState(false)
     const [id, setId] = useState('')
@@ -22,21 +25,28 @@ const Cart = () => {
     })
 
     const [orden , setOrden] = useState({
-        productos: carrito ,
+        productos: carrito,
         usuarioi: {
             nombre : "",
             email: "",
             telefono: ""
         }
-        // total:""
-    })
-
-    function handleChange (){
-        setOrden ({...orden,
-
-            usuarioi : {...usuario},
 
     })
+
+    function handleChangeOrden () {
+
+        const usuario2={...usuario}
+        const aux = {...orden}
+        aux.usuarioi = usuario2
+        setOrden (aux)
+
+
+    //     setOrden ( prev => { return { 
+    //         ...prev,
+    //         usuarioi : {...usuario2}
+    // }
+    // })
 }
 
     function guardarUsuario (event) {
@@ -48,24 +58,15 @@ const Cart = () => {
         }}
 
         )
-        console.log(usuario.nombre)
     }
 
     const guardarCompra = async (event) => {
+
         event.preventDefault()
 
         setLoading(true)
-        // const orden = {
-        //     productos: carrito,
-        //     usuario: {
-        //         nombre: "Juan",
-        //         email: 'email@email.com',
-        //         telefono: '123456'
-        //     },
-        //     total: 100
-        // }
 
-        handleChange()
+        handleChangeOrden()
 
         const ordenesCollection = collection(db, 'ordenes')
         const referencia = await addDoc(ordenesCollection, orden)
@@ -73,12 +74,14 @@ const Cart = () => {
         setLoading(false)
         setId(id)
         handleRemoveCart()
-        console.log(usuario.nombre)
+
     }
 
     const handleDelete = (item) => {
         handleDeleteItem(item);
     }
+    useEffect(()=>{console.log(orden)},[orden])
+
 
     if (carrito.length === 0) {
 

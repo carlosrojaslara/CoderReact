@@ -12,7 +12,7 @@ const Form = (props) => {
                     id="nombre"
                     placeholder='Name'
                     onChange={props.guardarUsuario}
-                    value={props.usuario.nombre}
+                    // value={props.usuario.nombre}
                     name='nombre'>
                     
                 </input>
@@ -21,7 +21,7 @@ const Form = (props) => {
                     type="email"
                     id="email"
                     placeholder='email'
-                    value={props.usuario.email}
+                    // value={props.usuario.email}
                     onChange={props.guardarUsuario}
                     name="email"
                     >
@@ -31,7 +31,7 @@ const Form = (props) => {
                     type="tel"
                     id="telefono"
                     placeholder='telefono'
-                    value={props.usuario.telefono}
+                    // value={props.usuario.telefono}
                     onChange={props.guardarUsuario}
                     name="telefono"
                     >
