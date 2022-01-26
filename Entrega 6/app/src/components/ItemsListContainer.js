@@ -7,12 +7,8 @@ import { collection, getDocs, query, where } from 'firebase/firestore'
 
 const ItemListContainer = () => {
 
-
-    const [mensaje, setMensaje] = useState("loading");
-
     const { id } = useParams();
     const [productos, setProductos] = useState([]);
-    console.log(productos)
     const traerProductos = async () => {
 
         const productosCollection = collection(db, 'productos')

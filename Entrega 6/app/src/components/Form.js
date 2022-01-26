@@ -2,6 +2,7 @@ import React from 'react';
 
 const Form = (props) => {
 
+
   return <div>
             <h2>DATOS DE USUARIO</h2>
 
@@ -10,9 +11,8 @@ const Form = (props) => {
                 <input
                     type='text'
                     id="nombre"
-                    placeholder='Name'
+                    placeholder='Nombre'
                     onChange={props.guardarUsuario}
-                    // value={props.usuario.nombre}
                     name='nombre'>
                     
                 </input>
@@ -21,7 +21,7 @@ const Form = (props) => {
                     type="email"
                     id="email"
                     placeholder='email'
-                    // value={props.usuario.email}
+
                     onChange={props.guardarUsuario}
                     name="email"
                     >
@@ -31,14 +31,13 @@ const Form = (props) => {
                     type="tel"
                     id="telefono"
                     placeholder='telefono'
-                    // value={props.usuario.telefono}
                     onChange={props.guardarUsuario}
                     name="telefono"
                     >
                 </input>
                 <button 
                     className="form--submit"
-                    onClick={props.guardarCompra}
+                    onClick={props.handleSubmit}
                 >
                     guardar Compra
                 </button>

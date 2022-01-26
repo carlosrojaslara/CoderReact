@@ -34,20 +34,6 @@ const Cart = () => {
 
     })
 
-    function handleChangeOrden () {
-
-        const usuario2={...usuario}
-        const aux = {...orden}
-        aux.usuarioi = usuario2
-        setOrden (aux)
-
-
-    //     setOrden ( prev => { return { 
-    //         ...prev,
-    //         usuarioi : {...usuario2}
-    // }
-    // })
-}
 
     function guardarUsuario (event) {
         const { name , value } =event.target
@@ -60,27 +46,30 @@ const Cart = () => {
         )
     }
 
-    const guardarCompra = async (event) => {
 
-        event.preventDefault()
-
-        setLoading(true)
-
-        handleChangeOrden()
-
-        const ordenesCollection = collection(db, 'ordenes')
-        const referencia = await addDoc(ordenesCollection, orden)
-        const id = referencia.id
-        setLoading(false)
-        setId(id)
-        handleRemoveCart()
-
-    }
 
     const handleDelete = (item) => {
         handleDeleteItem(item);
     }
-    useEffect(()=>{console.log(orden)},[orden])
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        setSubmit(true)
+        }
+
+    useEffect(() => {
+        async function uploadData(){
+        const ordenesCollection = collection(db, 'ordenes')
+        const referencia = await addDoc(ordenesCollection, orden).then((res) => {return res})
+        const id = referencia.id
+        setLoading(false)
+        setId(id)
+        handleRemoveCart()
+        }
+        if(submit){
+            uploadData()
+        }
+        }, [submit])
 
 
     if (carrito.length === 0) {
@@ -112,7 +101,7 @@ const Cart = () => {
                     </div>
                 ))}
 
-                <Form guardarUsuario={guardarUsuario} guardarCompra={guardarCompra} usuario={usuario}/>
+                <Form guardarUsuario={guardarUsuario} handleSubmit={handleSubmit} usuario={usuario}/>
 
             </>
         )
